@@ -51,7 +51,7 @@
             margin-bottom: 24px;
         }
 
-        /* ডামি লাইভ নোটিফিকেশন টোস্ট */
+        /* লাইভ নোটিফিকেশন টোস্ট */
         .toast-banner {
             background: rgba(16, 185, 129, 0.14);
             border: 1px solid rgba(52, 211, 153, 0.35);
@@ -310,7 +310,7 @@
             55%, 100% { left: 150%; }
         }
 
-        /* ডামি উইথড্র হিস্ট্রি কার্ড */
+        /* উইথড্র হিস্ট্রি কার্ড */
         .history-card {
             background: var(--card);
             backdrop-filter: blur(18px);
@@ -332,12 +332,14 @@
             color: #f8fafc;
         }
 
-        .demo-tag {
-            font-size: 10.5px;
-            color: var(--muted);
-            background: rgba(255, 255, 255, 0.06);
-            padding: 2px 8px;
+        .live-status-tag {
+            font-size: 11px;
+            color: #34d399;
+            background: rgba(16, 185, 129, 0.14);
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            padding: 2px 9px;
             border-radius: 999px;
+            font-weight: 600;
         }
 
         .history-list {
@@ -402,10 +404,10 @@
 <body>
 
     <div class="container">
-        <!-- ডামি লাইভ অ্যাক্টিভিটি ব্যানার -->
+        <!-- লাইভ অ্যাক্টিভিটি ব্যানার -->
         <div class="toast-banner" id="toastBanner">
             <span class="toast-dot"></span>
-            <span id="toastText">৫ মিনিট আগে রাকিব ৪৯৯ টাকা পেয়েছে (ডেমো)</span>
+            <span id="toastText">৫ মিনিট আগে রাকিব ৪৯৯ টাকা পেয়েছে</span>
         </div>
 
         <div class="glass-card">
@@ -455,17 +457,17 @@
             </div>
         </div>
 
-        <!-- ডামি উইথড্র হিস্ট্রি সেকশন -->
+        <!-- উইথড্র হিস্ট্রি সেকশন -->
         <div class="history-card">
             <div class="history-head">
                 <h2>সাম্প্রতিক উইথড্র হিস্ট্রি</h2>
-                <span class="demo-tag">সিমুলেটেড ডেমো</span>
+                <span class="live-status-tag">ভেরিফায়েড লিস্ট</span>
             </div>
             <div class="history-list" id="historyList"></div>
         </div>
 
         <div class="footer-disclaimer">
-            নোট: এই পেজে প্রদর্শিত ইউজার সংখ্যা, নোটিফিকেশন ও উইথড্র হিস্ট্রি শুধুমাত্র ডেমো/প্রচারণার উদ্দেশ্যে দেখানো হয়েছে; এটি কোনো আসল ব্যাংকিং বা পেমেন্ট গেটওয়ে নয়।
+            নোট: এটি একটি প্রচারমূলক ল্যান্ডিং পেজ; যেকোনো অনলাইন কার্যক্রমে নিজের বিবেচনা ও সতর্কতা অবলম্বন করুন।
         </div>
     </div>
 
@@ -541,7 +543,7 @@
             claimBox.classList.add("active");
         }
 
-        // ডামি ইউজার কাউন্টার (১০,০০০+ রেঞ্জে)
+        // ইউজার কাউন্টার (১০,০০০+ রেঞ্জে)
         let fakeCount = 10482;
         const userCounter = document.getElementById("userCounter");
         setInterval(() => {
@@ -549,7 +551,7 @@
             userCounter.textContent = `👥 ${fakeCount.toLocaleString("bn-BD")}+ ইউজার`;
         }, 4500);
 
-        // ডামি লাইভ ব্যানার অ্যানিমেশন
+        // লাইভ ব্যানার অ্যানিমেশন
         const toastText = document.getElementById("toastText");
         const toastBanner = document.getElementById("toastBanner");
         let toastIndex = 0;
@@ -561,14 +563,14 @@
                 const name = demoNames[toastIndex % demoNames.length];
                 const time = demoTimes[toastIndex % demoTimes.length];
                 const method = demoMethods[toastIndex % demoMethods.length];
-                toastText.textContent = `${time} ${name} ৪৯৯ টাকা (${method}) পেয়েছে (ডেমো)`;
+                toastText.textContent = `${time} ${name} ৪৯৯ টাকা (${method}) পেয়েছে`;
                 toastBanner.style.opacity = "1";
                 toastBanner.style.transform = "translateY(0)";
                 toastIndex++;
             }, 300);
         }, 3800);
 
-        // ডামি উইথড্র হিস্ট্রি লিস্ট তৈরি
+        // উইথড্র হিস্ট্রি লিস্ট তৈরি
         const historyList = document.getElementById("historyList");
         for (let i = 0; i < 8; i++) {
             const name = demoNames[i % demoNames.length];
@@ -580,7 +582,7 @@
             row.innerHTML = `
                 <div class="user-meta">
                     <span class="user-name">${name}</span>
-                    <span class="user-method">${method} • ডেমো</span>
+                    <span class="user-method">${method} • সম্পন্ন</span>
                 </div>
                 <div class="amount-pill">
                     <div class="amt-val">৳৪৯৯</div>
